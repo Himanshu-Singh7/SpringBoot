@@ -80,9 +80,27 @@ public class BootjpaexampleApplication {
 		//Deleting the user element
 //		userreposeitory.deleteById(1);
 //		System.out.println("deleted");
-		Iterable<User> alluser = userreposeitory.findAll();
-		alluser.forEach(user ->{System.out.println(user);});
-		userreposeitory.deleteAll(alluser);
+//		Iterable<User> alluser = userreposeitory.findAll();
+//		alluser.forEach(user ->{System.out.println(user);});
+//		userreposeitory.deleteAll(alluser);
+		
+//		List<User> user = userreposeitory.findByNameAndCity("Rahul Singh","Chandauli");
+//		user.forEach(e -> System.out.println(e));
+		
+		List<User> allUser = userreposeitory.getAllUser();
+		allUser.forEach(e ->{
+			System.out.println(e);
+		});
+		
+		System.out.println("_________________________________________________________");
+		List<User> name = userreposeitory.getUserByName("Aprajit Singh");
+		name.forEach(e -> {
+			System.out.println(e);
+		});
+		
+		System.out.println("_____________________________________________________________");
+		
+		userreposeitory.getUser().forEach(e -> System.out.println(e));
 		
 	}
 
